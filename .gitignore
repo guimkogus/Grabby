@@ -41,6 +41,21 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Expo Ignore
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# macOS
+.DS_Store
+
 # TypeScript v1 declaration files
 typings/
 
