@@ -6,7 +6,7 @@ export default () => {
     <Welcome
       descriptionTitle="Buy anything. Wherever you want."
       description="As a Grabby buyer, you can ask travelers to bring your purchases from other countries."
-      image={require("../../assets/Grabby-Logo.png")}
+      image={require("../../assets/BuyerIcon.png")}
       titleText1="Order it!"
       titleText2="Save it!"
       titleText3="Grabby it!"

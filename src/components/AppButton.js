@@ -6,7 +6,13 @@ export default ({ color, icon, title }) => {
   return (
     <TouchableNativeFeedback>
       <View style={[styles.btn, { backgroundColor: color }]}>
-        <MaterialCommunityIcons name={icon} size={30} color="#fff" />
+        <MaterialCommunityIcons
+          style={styles.icon}
+          name={icon}
+          size={30}
+          color="#fff"
+        />
+        <View style={styles.separator} />
         <Text style={styles.title}>{title}</Text>
       </View>
     </TouchableNativeFeedback>
@@ -16,17 +22,26 @@ export default ({ color, icon, title }) => {
 const styles = StyleSheet.create({
   btn: {
     width: "75%",
-    height: 50,
+    height: 60,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
     borderRadius: 10,
     margin: 10,
+  },
+  icon: {
+    position: "absolute",
+    padding: 20,
+  },
+  separator: {
+    height: "100%",
+    width: 1,
+    backgroundColor: "#fff",
+    marginLeft: 70,
   },
   title: {
     color: "#fff",
     fontSize: 18,
     fontWeight: "bold",
-    paddingHorizontal: 20,
+    paddingLeft: 20,
   },
 });
