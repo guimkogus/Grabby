@@ -1,12 +1,31 @@
-import React from "react";
-import { StyleSheet, View, Text, TouchableWithoutFeedback } from "react-native";
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableWithoutFeedback,
+  Modal,
+} from "react-native";
+
 import Welcome from "../../components/Welcome";
 import AppButton from "../../components/AppButton";
-import TermsOfUses from "../../components/CheckTermOfUses";
+import CheckTermOfUses from "../../components/CheckTermOfUses";
+import EmailRegister from "../../components/EmailRegister";
 
 export default () => {
+  const [showEmailRegister, setShowEmailRegister] = useState(false);
+  const [isSelected, setSelection] = useState(false);
+
   return (
     <>
+      <Modal
+        transparent={true}
+        style={{ alignSelf: "center" }}
+        visible={showEmailRegister}
+        animationType="slide"
+      >
+        <EmailRegister closeModal={() => setShowEmailRegister(false)} />
+      </Modal>
       <Welcome
         titleText1="Now just log in"
         titleText2="and get started"
@@ -14,28 +33,42 @@ export default () => {
         image={require("../../assets/loginIcon.png")}
       />
       <View style={styles.container}>
-        <TermsOfUses
+        <CheckTermOfUses
+          isSelected={isSelected}
+          setSelection={setSelection}
           style={styles.terms}
           onPress={() => console.log("termos de uso")}
         />
-        <AppButton color="#46B0DB" icon="email" title="Continue with E-mail" />
-        <View style={styles.separator}>
-          <View style={styles.trace} />
-          <Text style={styles.or}>Or</Text>
-          <View style={styles.trace} />
+        <View
+          style={[
+            { width: "100%", alignItems: "center" },
+            isSelected ? null : { opacity: 0.5 },
+          ]}
+        >
+          <AppButton
+            color="#46B0DB"
+            icon="email"
+            title="Continue with E-mail"
+            onPress={() => setShowEmailRegister(isSelected)}
+          />
+          <View style={styles.separator}>
+            <View style={styles.trace} />
+            <Text style={styles.or}>Or</Text>
+            <View style={styles.trace} />
+          </View>
+          <AppButton
+            color="#4C64CF"
+            icon="facebook-box"
+            title="Continue with Facebook"
+          />
+          <AppButton
+            color="#fff"
+            image={require("../../assets/G.svg.webp")}
+            title="Continue with Google"
+          />
         </View>
-        <AppButton
-          color="#4C64CF"
-          icon="facebook-box"
-          title="Continue with Facebook"
-        />
-        <AppButton
-          color="#fff"
-          image={require("../../assets/G.svg.webp")}
-          title="Continue with Google"
-        />
       </View>
-      <TouchableWithoutFeedback onPress={() => console.log("KOR")}>
+      <TouchableWithoutFeedback onPress={() => console.log("Log in later")}>
         <Text style={styles.skip}>Log in later</Text>
       </TouchableWithoutFeedback>
     </>

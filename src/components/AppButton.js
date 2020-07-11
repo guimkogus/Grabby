@@ -8,13 +8,25 @@ import {
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-export default ({ color, icon, title, image }) => {
+export default ({
+  color,
+  icon,
+  title,
+  image,
+  onPress,
+  fontWeight,
+  alignItems,
+  marginTop,
+  fontSize = 16,
+  height = 50,
+}) => {
   return (
-    <TouchableNativeFeedback>
+    <TouchableNativeFeedback onPress={onPress}>
       <View
         style={[
-          color !== "#fff" ? styles.btn : styles.btn2,
-          { backgroundColor: color },
+          styles.btn,
+          color === "#fff" ? styles.border : null,
+          { backgroundColor: color, marginTop, height },
         ]}
       >
         {icon && (
@@ -26,15 +38,19 @@ export default ({ color, icon, title, image }) => {
           />
         )}
         {image && <Image style={styles.image} source={image} />}
-        <View style={styles.separator} />
-        <Text
-          style={[
-            styles.title,
-            color === "#fff" ? { color: "#000" } : { color: "#fff" },
-          ]}
-        >
-          {title}
-        </Text>
+        {icon && <View style={styles.separator} />}
+        {image && <View style={styles.separator} />}
+        <View style={{ width: "100%", alignItems }}>
+          <Text
+            style={[
+              styles.title,
+              color === "#fff" ? { color: "#000" } : { color: "#fff" },
+              { fontWeight, fontSize },
+            ]}
+          >
+            {title}
+          </Text>
+        </View>
       </View>
     </TouchableNativeFeedback>
   );
@@ -43,19 +59,12 @@ export default ({ color, icon, title, image }) => {
 const styles = StyleSheet.create({
   btn: {
     width: "75%",
-    height: 50,
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 10,
     margin: 10,
   },
-  btn2: {
-    width: "75%",
-    height: 50,
-    flexDirection: "row",
-    alignItems: "center",
-    borderRadius: 10,
-    margin: 10,
+  border: {
     borderColor: "#bbb",
     borderWidth: 1,
   },
@@ -77,6 +86,6 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    paddingLeft: 20,
+    paddingHorizontal: 20,
   },
 });
