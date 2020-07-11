@@ -1,4 +1,4 @@
-import { StatusBar } from "expo-status-bar";
+import { StatusBar } from "react-native";
 import React from "react";
 import BuyerWelcome from "./src/screens/welcome/BuyerWelcome";
 import TravelerWelcome from "./src/screens/welcome/TravelerWelcome";
@@ -9,8 +9,8 @@ import ComponentTesting from "./src/screens/ComponentTesting";
 export default function App() {
   return (
     <>
-      <LoginWelcome />
-      <StatusBar style="auto" />
+      <StatusBar style={"auto"} />
+      <TermsOfUse />
     </>
   );
 }

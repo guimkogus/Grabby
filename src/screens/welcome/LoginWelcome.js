@@ -9,8 +9,8 @@ import {
 
 import Welcome from "../../components/Welcome";
 import AppButton from "../../components/AppButton";
-import CheckTermOfUses from "../../components/CheckTermOfUses";
-import EmailRegister from "../../components/EmailRegister";
+import CheckTermOfUses from "../../components/forms/CheckTermOfUses";
+import EmailRegister from "../../components/forms/EmailRegister";
 
 export default () => {
   const [showEmailRegister, setShowEmailRegister] = useState(false);
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   skip: {
     fontSize: 14,
     color: "#46B0DB",
-    marginTop: 30,
+    marginTop: 20,
     marginLeft: 30,
   },
   terms: {

@@ -1,5 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
+import AppText from "./AppText";
+import colors from "../config/colors";
 
 export default ({
   descriptionTitle,
@@ -13,9 +15,9 @@ export default ({
     <>
       <View style={styles.container}>
         <View style={styles.title}>
-          {titleText1 && <Text style={styles.texts}>{titleText1}</Text>}
-          {titleText2 && <Text style={styles.texts}>{titleText2}</Text>}
-          {titleText3 && <Text style={styles.texts}>{titleText3}</Text>}
+          {titleText1 && <AppText style={styles.texts}>{titleText1}</AppText>}
+          {titleText2 && <AppText style={styles.texts}>{titleText2}</AppText>}
+          {titleText3 && <AppText style={styles.texts}>{titleText3}</AppText>}
         </View>
         <View style={styles.iconBackground}>
           <Image style={styles.icon} source={image} />
@@ -23,8 +25,8 @@ export default ({
       </View>
       {descriptionTitle && description && (
         <View style={styles.descriptionContainer}>
-          <Text style={styles.descriptionTitle}>{descriptionTitle}</Text>
-          <Text style={styles.description}>{description}</Text>
+          <AppText style={styles.descriptionTitle}>{descriptionTitle}</AppText>
+          <AppText style={styles.description}>{description}</AppText>
         </View>
       )}
     </>
@@ -35,7 +37,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#4C64CF",
     width: "100%",
-    height: 250,
+    height: 225,
     alignItems: "center",
   },
   descriptionContainer: {
@@ -63,15 +65,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     position: "absolute",
-    marginTop: 180,
+    marginTop: 160,
   },
   title: {
-    marginTop: 50,
+    marginTop: 25,
     alignItems: "center",
   },
   texts: {
     fontSize: 30,
     fontWeight: "bold",
-    color: "#fff",
+    color: colors.white,
   },
 });

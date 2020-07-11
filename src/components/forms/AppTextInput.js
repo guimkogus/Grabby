@@ -2,15 +2,9 @@ import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-export default ({
-  icon,
-  width = "80%",
-  alignSelf,
-  marginTop,
-  ...otherProps
-}) => {
+export default ({ icon, ...otherProps }) => {
   return (
-    <View style={[styles.container, { width, marginTop }]}>
+    <View style={[styles.container]}>
       {icon && (
         <MaterialCommunityIcons
           name={icon}
@@ -39,6 +33,7 @@ const styles = StyleSheet.create({
     padding: 15,
     marginVertical: 10,
     alignItems: "center",
+    width: "80%",
   },
   icon: {
     marginLeft: 15,

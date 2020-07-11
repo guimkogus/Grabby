@@ -1,12 +1,8 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  TouchableNativeFeedback,
-  Text,
-  Image,
-} from "react-native";
+import { StyleSheet, View, TouchableNativeFeedback, Image } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+import AppText from "./AppText";
 
 export default ({
   color,
@@ -41,7 +37,7 @@ export default ({
         {icon && <View style={styles.separator} />}
         {image && <View style={styles.separator} />}
         <View style={{ width: "100%", alignItems }}>
-          <Text
+          <AppText
             style={[
               styles.title,
               color === "#fff" ? { color: "#000" } : { color: "#fff" },
@@ -49,7 +45,7 @@ export default ({
             ]}
           >
             {title}
-          </Text>
+          </AppText>
         </View>
       </View>
     </TouchableNativeFeedback>
