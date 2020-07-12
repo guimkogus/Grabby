@@ -5,12 +5,13 @@ import TravelerWelcome from "./src/screens/welcome/TravelerWelcome";
 import LoginWelcome from "./src/screens/welcome/LoginWelcome";
 import TermsOfUse from "./src/screens/welcome/TermsOfUse";
 import ComponentTesting from "./src/screens/ComponentTesting";
+import Home from "./src/screens/Home";
 
 export default function App() {
   return (
     <>
       <StatusBar style={"auto"} />
-      <TermsOfUse />
+      <Home />
     </>
   );
 }
