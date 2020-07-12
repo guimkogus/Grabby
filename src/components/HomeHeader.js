@@ -25,7 +25,7 @@ export default ({ children, onPress }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.primary,
+    backgroundColor: colors.primaryShadow,
     height: 300,
     width: "100%",
   },

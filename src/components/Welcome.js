@@ -35,7 +35,7 @@ export default ({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#4C64CF",
+    backgroundColor: colors.primaryShadow,
     width: "100%",
     height: 225,
     alignItems: "center",

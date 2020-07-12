@@ -26,6 +26,9 @@ const styles = StyleSheet.create({
     backgroundColor: colors.secondary,
     justifyContent: "center",
     alignItems: "center",
+    position: "absolute",
+    marginTop: 530,
+    marginLeft: 10,
   },
   shopIcon: {
     color: colors.white,
