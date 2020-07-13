@@ -9,7 +9,12 @@ export default ({ children, onPress }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <MaterialCommunityIcons style={styles.menu} name="menu" size={40} />
+        <MaterialCommunityIcons
+          onPress={onPress}
+          style={styles.menu}
+          name="menu"
+          size={40}
+        />
         <Image style={styles.logo} source={require("../assets/Grabby.png")} />
       </View>
       <View style={styles.welcome}>
@@ -26,7 +31,7 @@ export default ({ children, onPress }) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.primaryShadow,
-    height: 300,
+    height: 280,
     width: "100%",
   },
   header: {
@@ -34,7 +39,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
-    marginTop: 20,
   },
   menu: {
     color: colors.white,

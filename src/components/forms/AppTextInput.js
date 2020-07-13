@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default ({ icon, ...otherProps }) => {
   return (
-    <View style={[styles.container]}>
+    <View style={styles.container}>
       {icon && (
         <MaterialCommunityIcons
           name={icon}
@@ -17,7 +17,7 @@ export default ({ icon, ...otherProps }) => {
         autoCapitalize="none"
         autoCorrect={false}
         placeholderTextColor={"#999"}
-        style={[styles.text, { flex: 1 }]}
+        style={styles.text}
         {...otherProps}
       />
     </View>
@@ -26,6 +26,7 @@ export default ({ icon, ...otherProps }) => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     alignSelf: "center",
     backgroundColor: "#eee",
     borderRadius: 25,

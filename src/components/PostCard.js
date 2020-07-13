@@ -9,14 +9,14 @@ export default ({ product }) => {
   return (
     <View style={styles.container}>
       <ImageBackground
-        blurRadius={2}
+        blurRadius={3}
         source={product.image}
         style={styles.image}
       >
         <View style={styles.showcase}>
           <View style={styles.header}>
-            <ProductInfo info={product.title} />
             <GrabbyButton onPress={() => console.log("Grabby it!")} />
+            <ProductInfo info={product.title} />
           </View>
           <View style={styles.priceContainer}>
             <ProductInfo style={styles.price} info={product.price} />
@@ -36,9 +36,9 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: "row",
-    marginTop: 5,
-    justifyContent: "center",
     alignItems: "center",
+    marginTop: 5,
+    marginLeft: 5,
   },
   image: {
     width: "100%",
@@ -47,13 +47,13 @@ const styles = StyleSheet.create({
   showcase: {
     width: "100%",
     height: "100%",
-    backgroundColor: "rgba(0,0,0,0.1)",
+    backgroundColor: "rgba(0,0,0,0.3)",
     borderRadius: 5,
   },
   priceContainer: {
     position: "absolute",
     marginTop: "50%",
-    marginLeft: "55%",
+    marginLeft: "3%",
   },
   price: {
     color: colors.white,

@@ -1,5 +1,10 @@
 import React from "react";
-import { StyleSheet, View, TouchableWithoutFeedback } from "react-native";
+import {
+  StyleSheet,
+  View,
+  TouchableWithoutFeedback,
+  TextInput,
+} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AppText from "./AppText";
 import colors from "../config/colors";
@@ -14,14 +19,20 @@ export default ({ style }) => {
           size={40}
           color={colors.medium}
         />
-        <AppText style={styles.text}>Search for products, brands...</AppText>
+        <TextInput
+          autoCapitalize="none"
+          autoCorrect={false}
+          placeholderTextColor={"#999"}
+          placeholder="Search for products, brands..."
+          style={styles.input}
+        />
         <View style={styles.micContainer}>
           <View style={styles.separator} />
           <MaterialCommunityIcons
             style={styles.microphone}
             name="microphone-outline"
             size={35}
-            color={colors.primary}
+            color={colors.primaryShadow}
           />
         </View>
       </View>
@@ -39,6 +50,10 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     alignItems: "center",
     marginTop: 10,
+  },
+  input: {
+    fontSize: 17,
+    height: "100%",
   },
   search: {
     marginLeft: 15,

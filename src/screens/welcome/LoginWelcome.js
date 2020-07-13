@@ -11,6 +11,7 @@ import Welcome from "../../components/Welcome";
 import AppButton from "../../components/AppButton";
 import CheckTermOfUses from "../../components/forms/CheckTermOfUses";
 import EmailRegister from "../../components/forms/EmailRegister";
+import colors from "../../config/colors";
 
 export default () => {
   const [showEmailRegister, setShowEmailRegister] = useState(false);
@@ -30,7 +31,7 @@ export default () => {
         titleText1="Now just log in"
         titleText2="and get started"
         titleText3=";)"
-        image={require("../../assets/loginIcon.png")}
+        image={require("../../assets/logo.png")}
       />
       <View style={styles.container}>
         <CheckTermOfUses
@@ -46,7 +47,7 @@ export default () => {
           ]}
         >
           <AppButton
-            color="#46B0DB"
+            color={colors.primaryLight}
             icon="email"
             title="Continue with E-mail"
             onPress={() => setShowEmailRegister(isSelected)}
@@ -57,12 +58,12 @@ export default () => {
             <View style={styles.trace} />
           </View>
           <AppButton
-            color="#4C64CF"
+            color={colors.primary}
             icon="facebook-box"
             title="Continue with Facebook"
           />
           <AppButton
-            color="#fff"
+            color={colors.white}
             image={require("../../assets/G.svg.webp")}
             title="Continue with Google"
           />
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
   },
   skip: {
     fontSize: 14,
-    color: "#46B0DB",
+    color: colors.primaryLight,
     marginTop: 20,
     marginLeft: 30,
   },

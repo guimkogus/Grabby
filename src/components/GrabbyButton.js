@@ -1,23 +1,22 @@
 import React from "react";
-import { StyleSheet, View, TouchableWithoutFeedback } from "react-native";
-import { Entypo } from "@expo/vector-icons";
+import { StyleSheet, View, TouchableNativeFeedback } from "react-native";
 
 import AppText from "./AppText";
 import colors from "../config/colors";
 
 export default ({ onPress }) => {
   return (
-    <TouchableWithoutFeedback onPress={onPress}>
+    <TouchableNativeFeedback onPress={onPress}>
       <View style={styles.button}>
         <AppText style={styles.title}>Grabby it!</AppText>
-        <Entypo name="aircraft-take-off" style={styles.icon} size={20} />
       </View>
-    </TouchableWithoutFeedback>
+    </TouchableNativeFeedback>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
+    marginRight: 10,
     flexDirection: "row",
     backgroundColor: colors.secondary,
     borderRadius: 5,
@@ -29,9 +28,6 @@ const styles = StyleSheet.create({
     color: colors.white,
     marginHorizontal: 10,
     fontWeight: "bold",
-  },
-  icon: {
-    color: colors.white,
-    paddingRight: 10,
+    fontSize: 22,
   },
 });

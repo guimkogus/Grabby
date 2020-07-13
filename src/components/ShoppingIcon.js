@@ -1,37 +1,32 @@
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, TouchableNativeFeedback } from "react-native";
 
 import colors from "../config/colors";
 
-export default () => {
+export default ({ onPress }) => {
   return (
-    <>
+    <TouchableNativeFeedback onPress={onPress}>
       <View style={styles.shop}>
-        <MaterialCommunityIcons
-          style={styles.shopIcon}
-          name="shopping"
-          size={80}
-        />
+        <MaterialCommunityIcons style={styles.shopIcon} name="cart" size={50} />
       </View>
-    </>
+    </TouchableNativeFeedback>
   );
 };
 
 const styles = StyleSheet.create({
   shop: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
     borderRadius: 50,
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.primaryShadow,
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
-    marginTop: 530,
-    marginLeft: 10,
+    marginTop: 560,
+    marginLeft: 320,
   },
   shopIcon: {
     color: colors.white,
-    marginBottom: 5,
   },
 });

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, FlatList, ScrollView } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 
 import SearchBar from "../components/SearchBar";
 import ShoppingIcon from "../components/ShoppingIcon";
@@ -43,17 +43,15 @@ const db = [
 export default () => {
   return (
     <View>
-      <HomeHeader>
+      <HomeHeader onPress={() => console.log("menu tapped")}>
         <SearchBar />
       </HomeHeader>
-      <ScrollView>
-        <FlatList
-          scrollEnabled
-          data={db}
-          renderItem={({ item }) => <PostCard product={item} />}
-          keyExtractor={(item) => item.id.toString()}
-        />
-      </ScrollView>
+      <FlatList
+        scrollEnabled
+        data={db}
+        renderItem={({ item }) => <PostCard product={item} />}
+        keyExtractor={(item) => item.id.toString()}
+      />
       <ShoppingIcon />
     </View>
   );
