@@ -12,6 +12,7 @@ import AppButton from "../../components/AppButton";
 import CheckTermOfUses from "../../components/forms/CheckTermOfUses";
 import EmailRegister from "../../components/forms/EmailRegister";
 import colors from "../../config/colors";
+import normalize from "react-native-normalize";
 
 export default () => {
   const [showEmailRegister, setShowEmailRegister] = useState(false);
@@ -47,6 +48,7 @@ export default () => {
           ]}
         >
           <AppButton
+            buttonStyle={styles.buttonStyle}
             color={colors.primaryLight}
             icon="email"
             title="Continue with E-mail"
@@ -58,11 +60,13 @@ export default () => {
             <View style={styles.trace} />
           </View>
           <AppButton
-            color={colors.primary}
+            buttonStyle={styles.buttonStyle}
+            color={colors.primaryMedium}
             icon="facebook-box"
             title="Continue with Facebook"
           />
           <AppButton
+            buttonStyle={styles.buttonStyle}
             color={colors.white}
             image={require("../../assets/G.svg.webp")}
             title="Continue with Google"
@@ -78,30 +82,30 @@ export default () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 80,
+    marginTop: normalize(70),
     alignItems: "center",
+  },
+  buttonStyle: {
+    height: normalize(50),
   },
   separator: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    height: 20,
+    height: normalize(20),
     width: "100%",
   },
   skip: {
-    fontSize: 14,
+    fontSize: normalize(16),
     color: colors.primaryLight,
-    marginTop: 20,
-    marginLeft: 30,
-  },
-  terms: {
-    marginBottom: 10,
+    marginTop: normalize(20),
+    marginLeft: normalize(30),
   },
   trace: {
     backgroundColor: "#bbb",
     height: 1,
     width: "30%",
-    marginHorizontal: 10,
+    marginHorizontal: normalize(10),
   },
   or: {
     color: "#777",

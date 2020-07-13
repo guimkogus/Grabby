@@ -14,7 +14,7 @@ export default () => {
         titleText2="Save it!"
         titleText3="Grabby it!"
       />
-      <NextButton title="next" onPress={() => console.log("Next")} />
+      <NextButton title="Next" onPress={() => console.log("Next")} />
     </View>
   );
 };

@@ -2,11 +2,12 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import AppText from "./AppText";
 import colors from "../config/colors";
+import normalize from "react-native-normalize";
 
-export default ({ info, style, ...otherProps }) => {
+export default ({ info, ...otherProps }) => {
   return (
     <View style={styles.container} {...otherProps}>
-      <AppText style={[styles.text, style]}>{info}</AppText>
+      <AppText style={styles.text}>{info}</AppText>
     </View>
   );
 };
@@ -18,9 +19,9 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   text: {
-    margin: 10,
+    margin: normalize(10),
     color: colors.white,
-    fontSize: 24,
+    fontSize: normalize(24),
     fontWeight: "bold",
     textAlign: "center",
   },

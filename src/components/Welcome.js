@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, View, Image } from "react-native";
 import AppText from "./AppText";
 import colors from "../config/colors";
+import normalize from "react-native-normalize";
 
 export default ({
   descriptionTitle,
@@ -35,9 +36,9 @@ export default ({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.primaryShadow,
+    backgroundColor: colors.primary,
     width: "100%",
-    height: 225,
+    height: "35%",
     alignItems: "center",
   },
   descriptionContainer: {
@@ -46,34 +47,32 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   descriptionTitle: {
-    fontSize: 18,
     fontWeight: "bold",
   },
   description: {
-    fontSize: 18,
     textAlign: "center",
   },
   icon: {
-    width: 100,
-    height: 100,
+    width: "80%",
+    height: "80%",
     marginBottom: 5,
   },
   iconBackground: {
     backgroundColor: colors.white,
-    width: 130,
-    height: 130,
-    borderRadius: 70,
+    width: normalize(130),
+    height: normalize(130),
+    borderRadius: 80,
     alignItems: "center",
     justifyContent: "center",
     position: "absolute",
-    marginTop: 160,
+    marginTop: normalize(160),
   },
   title: {
-    marginTop: 25,
+    marginTop: normalize(25),
     alignItems: "center",
   },
   texts: {
-    fontSize: 30,
+    fontSize: normalize(30),
     fontWeight: "bold",
     color: colors.white,
   },

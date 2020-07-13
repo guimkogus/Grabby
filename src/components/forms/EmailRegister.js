@@ -6,6 +6,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AppFormField from "./AppFormField";
 import SubmitButton from "./SubmitButton";
 import AppForm from "./AppForm";
+import normalize from "react-native-normalize";
+import colors from "../../config/colors";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required().min(3).max(10).label("Name"),
@@ -27,7 +29,7 @@ export default ({ closeModal }) => {
           <MaterialCommunityIcons
             onPress={closeModal}
             name="close"
-            size={22}
+            size={normalize(22)}
             style={styles.close}
           />
         </View>
@@ -54,7 +56,7 @@ export default ({ closeModal }) => {
             secureTextEntry
             textContentType="password"
           />
-          <View style={{ alignItems: "center" }}>
+          <View style={styles.submit}>
             <SubmitButton title="Ok, agreed!" />
           </View>
         </AppForm>
@@ -65,27 +67,32 @@ export default ({ closeModal }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 5,
+    marginTop: normalize(5),
     width: "95%",
-    height: 550,
-    backgroundColor: "#fff",
+    height: normalize(500),
+    backgroundColor: colors.white,
     borderRadius: 5,
   },
   close: {
-    marginRight: 20,
-    marginTop: 20,
+    marginRight: normalize(20),
+    marginTop: normalize(20),
   },
   separator: {
     height: 1,
-    width: 300,
-    backgroundColor: "#eee",
+    width: normalize(300),
+    backgroundColor: colors.light,
     alignSelf: "center",
-    marginVertical: 5,
+    marginVertical: normalize(5),
+  },
+  submit: {
+    alignItems: "center",
+    flexDirection: "column-reverse",
+    flex: 1,
   },
   text: {
-    fontSize: 22,
+    fontSize: normalize(22),
     textAlign: "center",
-    color: "#999",
+    color: colors.medium,
     fontWeight: "bold",
   },
 });

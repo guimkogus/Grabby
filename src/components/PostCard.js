@@ -4,6 +4,7 @@ import { StyleSheet, View, ImageBackground } from "react-native";
 import colors from "../config/colors";
 import GrabbyButton from "./GrabbyButton";
 import ProductInfo from "./ProductInfo";
+import normalize from "react-native-normalize";
 
 export default ({ product }) => {
   return (
@@ -19,7 +20,7 @@ export default ({ product }) => {
             <ProductInfo info={product.title} />
           </View>
           <View style={styles.priceContainer}>
-            <ProductInfo style={styles.price} info={product.price} />
+            <ProductInfo info={product.price} />
           </View>
         </View>
       </ImageBackground>
@@ -29,20 +30,20 @@ export default ({ product }) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 250,
+    height: normalize(250),
     width: "90%",
-    marginTop: 20,
+    marginTop: normalize(20),
     alignSelf: "center",
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 5,
-    marginLeft: 5,
+    marginTop: normalize(5),
+    marginLeft: normalize(5),
   },
   image: {
     width: "100%",
-    height: 250,
+    height: normalize(250),
   },
   showcase: {
     width: "100%",
@@ -54,8 +55,5 @@ const styles = StyleSheet.create({
     position: "absolute",
     marginTop: "50%",
     marginLeft: "3%",
-  },
-  price: {
-    color: colors.white,
   },
 });

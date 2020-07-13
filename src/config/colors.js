@@ -1,6 +1,6 @@
 export default {
-  primary: "#4C64CF",
-  primaryShadow: "#5649E6",
+  primary: "#5649E6",
+  primaryMedium: "#4C64CF",
   primaryLight: "#46B0DB",
   secondary: "#55c9ac",
   black: "#000",
@@ -8,6 +8,6 @@ export default {
   medium: "#aaa",
   gray: "#888",
   light: "#f8f4f4",
-  dark: "#0c0c0c",
+  dark: "#666",
   danger: "#ff5252",
 };

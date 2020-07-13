@@ -1,27 +1,29 @@
 import React from "react";
 import {
   StyleSheet,
-  Text,
   View,
   CheckBox,
   TouchableWithoutFeedback,
 } from "react-native";
+import AppText from "../AppText";
+import colors from "../../config/colors";
+import normalize from "react-native-normalize";
 
-export default ({ onPress, style, isSelected, setSelection }) => {
+export default ({ onPress, isSelected, setSelection }) => {
   return (
-    <View style={[styles.checkboxContainer, style]}>
+    <View style={styles.checkboxContainer}>
       <CheckBox value={isSelected} onValueChange={setSelection} />
       <View>
         <View style={styles.line}>
-          <Text style={styles.text}>By logging in, I agree to </Text>
+          <AppText>By logging in, I agree to </AppText>
           <TouchableWithoutFeedback onPress={onPress}>
-            <Text style={[styles.hyperlink, styles.text]}>terms of use</Text>
+            <AppText style={styles.hyperlink}>terms of use</AppText>
           </TouchableWithoutFeedback>
         </View>
         <View style={styles.line}>
-          <Text style={styles.text}>and </Text>
+          <AppText>and </AppText>
           <TouchableWithoutFeedback onPress={onPress}>
-            <Text style={[styles.hyperlink, styles.text]}>privacy policy</Text>
+            <AppText style={styles.hyperlink}>privacy policy</AppText>
           </TouchableWithoutFeedback>
         </View>
       </View>
@@ -32,15 +34,13 @@ export default ({ onPress, style, isSelected, setSelection }) => {
 const styles = StyleSheet.create({
   checkboxContainer: {
     flexDirection: "row",
+    marginBottom: normalize(10),
   },
   hyperlink: {
     fontWeight: "bold",
-    color: "#46B0DB",
+    color: colors.primaryLight,
   },
   line: {
     flexDirection: "row",
-  },
-  text: {
-    fontSize: 16,
   },
 });

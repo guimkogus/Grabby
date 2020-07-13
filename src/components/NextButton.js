@@ -1,19 +1,38 @@
 import React from "react";
-import { StyleSheet, View, Button } from "react-native";
+import { StyleSheet, View, TouchableWithoutFeedback } from "react-native";
+import AppText from "./AppText";
+import colors from "../config/colors";
+import normalize from "react-native-normalize";
 
 export default ({ title, onPress }) => {
   return (
-    <View style={styles.btn}>
-      <Button title={title} onPress={onPress} />
+    <View style={styles.container}>
+      <TouchableWithoutFeedback onPress={onPress}>
+        <View style={styles.btn}>
+          <AppText style={styles.title}>{title}</AppText>
+        </View>
+      </TouchableWithoutFeedback>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  btn: {
+  container: {
+    flexDirection: "row-reverse",
     flex: 1,
-    width: 100,
-    marginTop: 220,
-    marginLeft: 280,
+  },
+  btn: {
+    backgroundColor: colors.primaryLight,
+    width: "30%",
+    height: "15%",
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: "45%",
+    marginRight: "10%",
+  },
+  title: {
+    color: colors.white,
+    fontSize: normalize(22),
   },
 });

@@ -3,34 +3,35 @@ import { StyleSheet, View, TouchableNativeFeedback, Image } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from "./AppText";
+import colors from "../config/colors";
+import normalize from "react-native-normalize";
 
 export default ({
+  buttonStyle,
+  textStyle,
   color,
   icon,
   title,
   image,
   onPress,
-  fontWeight,
   alignItems,
-  marginTop,
-  fontSize = 16,
-  height = 50,
 }) => {
   return (
     <TouchableNativeFeedback onPress={onPress}>
       <View
         style={[
           styles.btn,
-          color === "#fff" ? styles.border : null,
-          { backgroundColor: color, marginTop, height },
+          buttonStyle,
+          color === colors.white ? styles.border : null,
+          { backgroundColor: color },
         ]}
       >
         {icon && (
           <MaterialCommunityIcons
             style={styles.icon}
             name={icon}
-            size={30}
-            color="#fff"
+            size={normalize(30)}
+            color={colors.white}
           />
         )}
         {image && <Image style={styles.image} source={image} />}
@@ -40,8 +41,10 @@ export default ({
           <AppText
             style={[
               styles.title,
-              color === "#fff" ? { color: "#000" } : { color: "#fff" },
-              { fontWeight, fontSize },
+              textStyle,
+              color === colors.white
+                ? { color: colors.black }
+                : { color: colors.white },
             ]}
           >
             {title}
@@ -58,30 +61,29 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 10,
-    margin: 10,
+    margin: normalize(10),
   },
   border: {
-    borderColor: "#bbb",
+    borderColor: colors.medium,
     borderWidth: 1,
   },
   icon: {
     position: "absolute",
-    padding: 20,
+    padding: normalize(20),
   },
   image: {
-    width: 30,
-    height: 30,
+    width: normalize(30),
+    height: normalize(30),
     position: "absolute",
-    marginLeft: 20,
+    marginLeft: normalize(20),
   },
   separator: {
     height: "100%",
     width: 1,
-    backgroundColor: "#bbb",
-    marginLeft: 70,
+    backgroundColor: colors.medium,
+    marginLeft: normalize(70),
   },
   title: {
-    fontSize: 18,
-    paddingHorizontal: 20,
+    paddingHorizontal: normalize(20),
   },
 });

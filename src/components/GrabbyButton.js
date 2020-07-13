@@ -3,6 +3,7 @@ import { StyleSheet, View, TouchableNativeFeedback } from "react-native";
 
 import AppText from "./AppText";
 import colors from "../config/colors";
+import normalize from "react-native-normalize";
 
 export default ({ onPress }) => {
   return (
@@ -16,18 +17,18 @@ export default ({ onPress }) => {
 
 const styles = StyleSheet.create({
   button: {
-    marginRight: 10,
+    marginRight: normalize(10),
     flexDirection: "row",
     backgroundColor: colors.secondary,
     borderRadius: 5,
     alignItems: "center",
     justifyContent: "center",
-    height: 55,
+    height: normalize(55),
   },
   title: {
     color: colors.white,
-    marginHorizontal: 10,
+    marginHorizontal: normalize(10),
     fontWeight: "bold",
-    fontSize: 22,
+    fontSize: normalize(22),
   },
 });

@@ -2,6 +2,8 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AppText from "../../components/AppText";
+import normalize from "react-native-normalize";
+import colors from "../../config/colors";
 
 export default () => {
   return (
@@ -10,7 +12,7 @@ export default () => {
         <MaterialCommunityIcons
           style={styles.icon}
           name="arrow-left"
-          size={20}
+          size={normalize(22)}
         />
         <AppText style={styles.headerTitle}>ABOUT THE APP</AppText>
       </View>
@@ -66,38 +68,34 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   icon: {
-    marginLeft: 10,
-    color: "#fff",
+    marginLeft: normalize(10),
+    color: colors.white,
   },
   header: {
     width: "100%",
-    height: 50,
+    height: normalize(50),
     flexDirection: "row",
-    backgroundColor: "#4C64CF",
+    backgroundColor: colors.primary,
     alignItems: "center",
   },
   headerTitle: {
-    color: "#fff",
+    color: colors.white,
     fontWeight: "bold",
-    fontSize: 14,
-    marginLeft: 20,
-  },
-  statusBar: {
-    height: 24,
-    backgroundColor: "#5649E6",
+    fontSize: normalize(16),
+    marginLeft: normalize(20),
   },
   text: {
-    color: "#888",
-    fontSize: 15,
+    color: colors.gray,
+    fontSize: normalize(16),
   },
   textContainer: {
-    marginTop: 10,
+    marginTop: normalize(10),
     width: "93%",
   },
   title: {
-    marginVertical: 12,
-    color: "#666",
+    marginVertical: normalize(12),
+    color: colors.dark,
     fontWeight: "bold",
-    fontSize: 15,
+    fontSize: normalize(16),
   },
 });

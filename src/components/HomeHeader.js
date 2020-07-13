@@ -1,9 +1,10 @@
 import React from "react";
-import { StyleSheet, Image, View, Modal } from "react-native";
+import { StyleSheet, Image, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from "./AppText";
 import colors from "../config/colors";
+import normalize from "react-native-normalize";
 
 export default ({ children, onPress }) => {
   return (
@@ -13,13 +14,13 @@ export default ({ children, onPress }) => {
           onPress={onPress}
           style={styles.menu}
           name="menu"
-          size={40}
+          size={normalize(40)}
         />
         <Image style={styles.logo} source={require("../assets/Grabby.png")} />
       </View>
       <View style={styles.welcome}>
         <AppText style={styles.welcomeText}>Hello,</AppText>
-        <AppText style={[styles.welcomeText, styles.welcomeName]}>
+        <AppText style={[styles.welcomeText, { fontWeight: "bold" }]}>
           Welcome!
         </AppText>
       </View>
@@ -30,35 +31,32 @@ export default ({ children, onPress }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.primaryShadow,
-    height: 280,
+    backgroundColor: colors.primary,
+    height: normalize(280),
     width: "100%",
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    padding: 20,
+    padding: normalize(20),
   },
   menu: {
     color: colors.white,
     position: "absolute",
-    paddingRight: 340,
+    paddingRight: normalize(320),
   },
   logo: {
-    width: 150,
-    height: 40,
+    width: normalize(150),
+    height: normalize(40),
   },
   welcome: {
-    padding: 20,
-    paddingTop: 10,
-    paddingBottom: 25,
+    padding: normalize(20),
+    paddingTop: normalize(10),
+    paddingBottom: normalize(25),
   },
   welcomeText: {
     color: colors.white,
-    fontSize: 30,
-  },
-  welcomeName: {
-    fontWeight: "bold",
+    fontSize: normalize(30),
   },
 });
