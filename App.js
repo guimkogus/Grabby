@@ -6,12 +6,13 @@ import LoginWelcome from "./src/screens/welcome/LoginWelcome";
 import TermsOfUse from "./src/screens/welcome/TermsOfUse";
 import ComponentTesting from "./src/screens/ComponentTesting";
 import Home from "./src/screens/Home";
+import Messages from "./src/screens/menu/Messages";
 
 export default function App() {
   return (
     <>
       <StatusBar style={"auto"} />
-      <LoginWelcome />
+      <Messages />
     </>
   );
 }

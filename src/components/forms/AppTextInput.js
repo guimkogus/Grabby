@@ -4,13 +4,13 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import normalize from "react-native-normalize";
 import colors from "../../config/colors";
 
-export default ({ icon, placeholder }) => {
+export default ({ icon, placeholder, size = normalize(20), style }) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       {icon && (
         <MaterialCommunityIcons
           name={icon}
-          size={normalize(20)}
+          size={size}
           color={colors.dark}
           style={styles.icon}
         />
@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
     padding: normalize(15),
     marginVertical: normalize(10),
     alignItems: "center",
-    width: "80%",
-    height: "12%",
+    width: normalize(330),
+    height: normalize(60),
   },
   icon: {
     marginLeft: normalize(15),
