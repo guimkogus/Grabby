@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import EmailRegister from "../components/forms/EmailRegister";
+import MenuBar from "../components/MenuBar";
 
 export default () => {
   return (
     <View style={styles.container}>
-      <EmailRegister />
+      <MenuBar />
     </View>
   );
 };
@@ -14,7 +14,5 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "tomato",
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
 });

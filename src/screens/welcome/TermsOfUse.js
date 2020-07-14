@@ -1,21 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { StyleSheet, View, ScrollView } from "react-native";
 import AppText from "../../components/AppText";
 import normalize from "react-native-normalize";
 import colors from "../../config/colors";
+import AppHeader from "../../components/AppHeader";
 
 export default () => {
   return (
     <>
-      <View style={styles.header}>
-        <MaterialCommunityIcons
-          style={styles.icon}
-          name="arrow-left"
-          size={normalize(22)}
-        />
-        <AppText style={styles.headerTitle}>ABOUT THE APP</AppText>
-      </View>
+      <AppHeader title={"ABOUT THE APP"} />
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.textContainer}>
@@ -66,23 +59,6 @@ export default () => {
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-  },
-  icon: {
-    marginLeft: normalize(10),
-    color: colors.white,
-  },
-  header: {
-    width: "100%",
-    height: normalize(50),
-    flexDirection: "row",
-    backgroundColor: colors.primary,
-    alignItems: "center",
-  },
-  headerTitle: {
-    color: colors.white,
-    fontWeight: "bold",
-    fontSize: normalize(16),
-    marginLeft: normalize(20),
   },
   text: {
     color: colors.gray,
