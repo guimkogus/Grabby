@@ -1,18 +1,13 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  TouchableWithoutFeedback,
-  Modal,
-} from "react-native";
+import { StyleSheet, View, Text, TouchableWithoutFeedback } from "react-native";
+import normalize from "react-native-normalize";
+import Modal from "react-native-modal";
 
-import Welcome from "../../components/Welcome";
-import AppButton from "../../components/AppButton";
+import Welcome from "../../components/welcome/Welcome";
+import AppButton from "../../components/utils/AppButton";
 import CheckTermOfUses from "../../components/forms/CheckTermOfUses";
 import EmailRegister from "../../components/forms/EmailRegister";
 import colors from "../../config/colors";
-import normalize from "react-native-normalize";
 
 export default () => {
   const [showEmailRegister, setShowEmailRegister] = useState(false);
@@ -21,10 +16,11 @@ export default () => {
   return (
     <>
       <Modal
-        transparent={true}
-        style={{ alignSelf: "center" }}
-        visible={showEmailRegister}
-        animationType="slide"
+        animationIn="fadeInUp"
+        animationOut="fadeOutDown"
+        onBackdropPress={() => setShowEmailRegister(false)}
+        isVisible={showEmailRegister}
+        style={{ margin: 0, alignItems: "center" }}
       >
         <EmailRegister closeModal={() => setShowEmailRegister(false)} />
       </Modal>

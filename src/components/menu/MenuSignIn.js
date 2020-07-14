@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-
-import AppText from "../AppText";
 import normalize from "react-native-normalize";
+
+import AppText from "../utils/AppText";
 import colors from "../../config/colors";
 
 export default () => {

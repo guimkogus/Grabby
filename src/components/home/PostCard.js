@@ -1,10 +1,9 @@
 import React from "react";
 import { StyleSheet, View, ImageBackground } from "react-native";
+import normalize from "react-native-normalize";
 
-import colors from "../config/colors";
 import GrabbyButton from "./GrabbyButton";
 import ProductInfo from "./ProductInfo";
-import normalize from "react-native-normalize";
 
 export default ({ product }) => {
   return (

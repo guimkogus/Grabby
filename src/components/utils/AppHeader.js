@@ -1,9 +1,10 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import AppText from "./AppText";
 import normalize from "react-native-normalize";
-import colors from "../config/colors";
+
+import AppText from "./AppText";
+import colors from "../../config/colors";
 
 export default ({ title }) => {
   return (

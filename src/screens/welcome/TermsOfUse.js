@@ -1,9 +1,10 @@
 import React from "react";
 import { StyleSheet, View, ScrollView } from "react-native";
-import AppText from "../../components/AppText";
 import normalize from "react-native-normalize";
+
+import AppText from "../../components/utils/AppText";
+import AppHeader from "../../components/utils/AppHeader";
 import colors from "../../config/colors";
-import AppHeader from "../../components/AppHeader";
 
 export default () => {
   return (

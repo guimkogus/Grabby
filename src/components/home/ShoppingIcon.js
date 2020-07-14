@@ -2,7 +2,7 @@ import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { StyleSheet, View, TouchableNativeFeedback } from "react-native";
 
-import colors from "../config/colors";
+import colors from "../../config/colors";
 import normalize from "react-native-normalize";
 
 export default ({ onPress }) => {

@@ -1,9 +1,10 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { useFormikContext } from "formik";
-import AppButton from "../AppButton";
-import colors from "../../config/colors";
 import normalize from "react-native-normalize";
+
+import AppButton from "../utils/AppButton";
+import colors from "../../config/colors";
 
 export default ({ title }) => {
   const { handleSubmit } = useFormikContext();

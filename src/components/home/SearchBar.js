@@ -6,8 +6,9 @@ import {
   TextInput,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import colors from "../config/colors";
 import normalize from "react-native-normalize";
+
+import colors from "../../config/colors";
 
 export default () => {
   return (

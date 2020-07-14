@@ -6,10 +6,10 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-
-import AppText from "./AppText";
-import colors from "../config/colors";
 import normalize from "react-native-normalize";
+
+import AppText from "../utils/AppText";
+import colors from "../../config/colors";
 
 export default ({ children, setMenu }) => {
   return (
@@ -22,7 +22,10 @@ export default ({ children, setMenu }) => {
             size={normalize(40)}
           />
         </TouchableWithoutFeedback>
-        <Image style={styles.logo} source={require("../assets/Grabby.png")} />
+        <Image
+          style={styles.logo}
+          source={require("../../assets/Grabby.png")}
+        />
       </View>
       <View style={styles.welcome}>
         <AppText style={styles.welcomeText}>Hello,</AppText>

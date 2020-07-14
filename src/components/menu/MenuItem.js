@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import normalize from "react-native-normalize";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import AppText from "../AppText";
+import AppText from "../utils/AppText";
 import colors from "../../config/colors";
 
 export default ({ icon, option }) => {

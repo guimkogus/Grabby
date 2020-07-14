@@ -2,11 +2,11 @@ import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import * as Yup from "yup";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-
-import AppFormField from "./AppFormField";
-import SubmitButton from "./SubmitButton";
-import AppForm from "./AppForm";
 import normalize from "react-native-normalize";
+
+import AppFormField from "../forms/AppFormField";
+import SubmitButton from "../forms/SubmitButton";
+import AppForm from "../forms/AppForm";
 import colors from "../../config/colors";
 
 const validationSchema = Yup.object().shape({
@@ -17,50 +17,42 @@ const validationSchema = Yup.object().shape({
 
 export default ({ closeModal }) => {
   return (
-    <View
-      style={{
-        backgroundColor: "rgba(0,0,0,0.7)",
-        flex: 1,
-        alignItems: "center",
-      }}
-    >
-      <View style={styles.container}>
-        <View style={{ flexDirection: "row-reverse" }}>
-          <MaterialCommunityIcons
-            onPress={closeModal}
-            name="close"
-            size={normalize(22)}
-            style={styles.close}
-          />
-        </View>
-        <AppForm
-          initialValues={{ name: "", email: "", password: "" }}
-          onSubmit={(values) => console.log(values)}
-          validationSchema={validationSchema}
-        >
-          <Text style={styles.text}>How should we</Text>
-          <Text style={styles.text}>call you?</Text>
-          <AppFormField name="name" icon="account" placeholder="Name" />
-          <View style={styles.separator} />
-          <AppFormField
-            name="email"
-            icon="email"
-            keyboardType="email-address"
-            placeholder="Email"
-            textContentType="emailAddress"
-          />
-          <AppFormField
-            name="password"
-            icon="lock"
-            placeholder="Password"
-            secureTextEntry
-            textContentType="password"
-          />
-          <View style={styles.submit}>
-            <SubmitButton title="Ok, agreed!" />
-          </View>
-        </AppForm>
+    <View style={styles.container}>
+      <View style={{ flexDirection: "row-reverse" }}>
+        <MaterialCommunityIcons
+          onPress={closeModal}
+          name="close"
+          size={normalize(22)}
+          style={styles.close}
+        />
       </View>
+      <AppForm
+        initialValues={{ name: "", email: "", password: "" }}
+        onSubmit={(values) => console.log(values)}
+        validationSchema={validationSchema}
+      >
+        <Text style={styles.text}>How should we</Text>
+        <Text style={styles.text}>call you?</Text>
+        <AppFormField name="name" icon="account" placeholder="Name" />
+        <View style={styles.separator} />
+        <AppFormField
+          name="email"
+          icon="email"
+          keyboardType="email-address"
+          placeholder="Email"
+          textContentType="emailAddress"
+        />
+        <AppFormField
+          name="password"
+          icon="lock"
+          placeholder="Password"
+          secureTextEntry
+          textContentType="password"
+        />
+        <View style={styles.submit}>
+          <SubmitButton title="Ok, agreed!" />
+        </View>
+      </AppForm>
     </View>
   );
 };

@@ -1,7 +1,8 @@
 import React from "react";
-import Welcome from "../../components/Welcome";
 import { StyleSheet, View } from "react-native";
-import NextButton from "../../components/NextButton";
+
+import Welcome from "../../components/welcome/Welcome";
+import NextButton from "../../components/welcome/NextButton";
 
 export default () => {
   return (

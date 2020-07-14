@@ -5,9 +5,10 @@ import {
   CheckBox,
   TouchableWithoutFeedback,
 } from "react-native";
-import AppText from "../AppText";
-import colors from "../../config/colors";
 import normalize from "react-native-normalize";
+
+import AppText from "../utils/AppText";
+import colors from "../../config/colors";
 
 export default ({ onPress, isSelected, setSelection }) => {
   return (

@@ -1,15 +1,11 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { StyleSheet, View } from "react-native";
+
 import colors from "../../config/colors";
 import MenuOptions from "./MenuOptions";
 import MenuHeader from "./MenuHeader";
 
-export default ({ setMenu }) => {
+export default () => {
   return (
     <View style={styles.menu}>
       <View style={styles.header}>

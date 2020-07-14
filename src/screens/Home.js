@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { StyleSheet, View, FlatList } from "react-native";
 import Modal from "react-native-modal";
 
-import SearchBar from "../components/SearchBar";
-import ShoppingIcon from "../components/ShoppingIcon";
-import HomeHeader from "../components/HomeHeader";
-import PostCard from "../components/PostCard";
+import SearchBar from "../components/home/SearchBar";
+import ShoppingIcon from "../components/home/ShoppingIcon";
+import HomeHeader from "../components/home/HomeHeader";
+import PostCard from "../components/home/PostCard";
 import MenuBar from "../components/menu/MenuBar";
 
 const db = [
