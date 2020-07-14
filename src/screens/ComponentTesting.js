@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import MenuBar from "../components/MenuBar";
+import MenuBar from "../components/menu/MenuBar";
 
 export default () => {
   return (

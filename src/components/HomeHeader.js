@@ -1,21 +1,27 @@
 import React from "react";
-import { StyleSheet, Image, View } from "react-native";
+import {
+  StyleSheet,
+  Image,
+  View,
+  TouchableWithoutFeedback,
+} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from "./AppText";
 import colors from "../config/colors";
 import normalize from "react-native-normalize";
 
-export default ({ children, onPress }) => {
+export default ({ children, setMenu }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <MaterialCommunityIcons
-          onPress={onPress}
-          style={styles.menu}
-          name="menu"
-          size={normalize(40)}
-        />
+        <TouchableWithoutFeedback onPress={setMenu}>
+          <MaterialCommunityIcons
+            style={styles.menu}
+            name="menu"
+            size={normalize(40)}
+          />
+        </TouchableWithoutFeedback>
         <Image style={styles.logo} source={require("../assets/Grabby.png")} />
       </View>
       <View style={styles.welcome}>

@@ -1,9 +1,10 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
-import AppText from "./AppText";
 import normalize from "react-native-normalize";
-import colors from "../config/colors";
+import { MaterialIcons } from "@expo/vector-icons";
+
+import AppText from "../AppText";
+import colors from "../../config/colors";
 
 export default ({ icon, option }) => {
   return (
@@ -18,9 +19,11 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
+    backgroundColor: colors.light,
   },
   icon: {
     color: colors.medium,
     margin: normalize(15),
+    marginLeft: normalize(20),
   },
 });

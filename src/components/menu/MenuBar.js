@@ -1,14 +1,20 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import AppText from "./AppText";
-import colors from "../config/colors";
+import {
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from "react-native";
+import colors from "../../config/colors";
 import MenuOptions from "./MenuOptions";
-import normalize from "react-native-normalize";
+import MenuHeader from "./MenuHeader";
 
-export default () => {
+export default ({ setMenu }) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}></View>
+    <View style={styles.menu}>
+      <View style={styles.header}>
+        <MenuHeader onPress={() => console.log("Sign In")} />
+      </View>
       <View style={styles.optionsContainer}>
         <MenuOptions
           onPress={() => console.log("Notifications")}
@@ -41,7 +47,7 @@ export default () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  menu: {
     backgroundColor: "dodgerblue",
     height: "100%",
     width: "65%",
@@ -50,6 +56,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     width: "100%",
     height: "30%",
+    flexDirection: "column-reverse",
   },
   optionsContainer: {
     backgroundColor: colors.light,

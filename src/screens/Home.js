@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, FlatList } from "react-native";
+import Modal from "react-native-modal";
 
 import SearchBar from "../components/SearchBar";
 import ShoppingIcon from "../components/ShoppingIcon";
 import HomeHeader from "../components/HomeHeader";
 import PostCard from "../components/PostCard";
+import MenuBar from "../components/menu/MenuBar";
 
 const db = [
   {
@@ -41,9 +43,20 @@ const db = [
 ];
 
 export default () => {
+  const [menuTapped, setMenu] = useState(false);
+
   return (
     <View>
-      <HomeHeader onPress={() => console.log("menu tapped")}>
+      <Modal
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
+        onBackdropPress={() => setMenu(false)}
+        isVisible={menuTapped}
+        style={{ margin: 0 }}
+      >
+        <MenuBar />
+      </Modal>
+      <HomeHeader setMenu={() => setMenu(true)}>
         <SearchBar />
       </HomeHeader>
       <FlatList
