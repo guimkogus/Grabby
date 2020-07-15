@@ -9,7 +9,10 @@ import colors from "../../config/colors";
 export default () => {
   return (
     <>
-      <AppHeader title={"ABOUT THE APP"} />
+      <AppHeader
+        title={"ABOUT THE APP"}
+        onPress={() => console.log("Back About")}
+      />
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.textContainer}>

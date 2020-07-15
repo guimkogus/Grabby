@@ -9,7 +9,10 @@ import colors from "../../config/colors";
 export default () => {
   return (
     <View style={styles.container}>
-      <AppHeader title="Messages" />
+      <AppHeader
+        title="Messages"
+        onPress={() => console.log("Back Messages")}
+      />
       <AppTextInput
         icon="account-box"
         placeholder="Find user"

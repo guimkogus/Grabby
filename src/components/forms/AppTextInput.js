@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import normalize from "react-native-normalize";
+
 import colors from "../../config/colors";
 
-export default ({ icon, placeholder, size = normalize(20), style }) => {
+export default ({
+  icon,
+  placeholder,
+  size = normalize(20),
+  style,
+  date,
+  ...otherProps
+}) => {
+  const [showDatePicker, setDatePicker] = useState(false);
+
   return (
     <View style={[styles.container, style]}>
       {icon && (
-        <MaterialCommunityIcons
+        <MaterialIcons
           name={icon}
           size={size}
           color={colors.dark}
@@ -21,6 +31,7 @@ export default ({ icon, placeholder, size = normalize(20), style }) => {
         placeholderTextColor={colors.medium}
         style={styles.text}
         placeholder={placeholder}
+        {...otherProps}
       />
     </View>
   );

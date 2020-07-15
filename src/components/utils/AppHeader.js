@@ -1,19 +1,21 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, TouchableWithoutFeedback } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import normalize from "react-native-normalize";
 
 import AppText from "./AppText";
 import colors from "../../config/colors";
 
-export default ({ title }) => {
+export default ({ title, onPress }) => {
   return (
     <View style={styles.header}>
-      <MaterialCommunityIcons
-        style={styles.icon}
-        name="arrow-left"
-        size={normalize(22)}
-      />
+      <TouchableWithoutFeedback onPress={onPress}>
+        <MaterialCommunityIcons
+          style={styles.icon}
+          name="arrow-left"
+          size={normalize(22)}
+        />
+      </TouchableWithoutFeedback>
       <AppText style={styles.headerTitle}>{title}</AppText>
     </View>
   );

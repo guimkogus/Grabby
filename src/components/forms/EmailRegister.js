@@ -33,7 +33,7 @@ export default ({ closeModal }) => {
       >
         <Text style={styles.text}>How should we</Text>
         <Text style={styles.text}>call you?</Text>
-        <AppFormField name="name" icon="account" placeholder="Name" />
+        <AppFormField name="name" icon="account-circle" placeholder="Name" />
         <View style={styles.separator} />
         <AppFormField
           name="email"
